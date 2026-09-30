@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+<head>
+
+
+  <!-- favicon icon -->
+  <link rel="icon" type="image/png" href="./icon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./icon/favicon.svg" />
+  <link rel="shortcut icon" href="./icon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png" />
+  <link rel="manifest" href="./icon/site.webmanifest" />
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Jikiri Butanas /DEV - Full-Stack Developer Portfolio</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0c1220',
+              surface: '#111b2e',
+              card: '#16223b',
+              cardBorder: '#233556',
+              accent: '#a5b4fc',
+              accentHover: '#c7d2fe',
+              cyanText: '#67e8f9',
+              muted: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-decorations">
+    body {
+      background-color: #0c1220;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #0c1220;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #233556;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #3b5077;
+    }
+  </style>
+</head>
+<body class="bg-[#0c1220] text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white custom-scroll overflow-x-hidden w-full">
+<!-- BEGIN: MainHeader -->
+<header class="w-full border-b border-[#1e2d4a]/70 bg-[#0c1220]/90 backdrop-blur-md sticky top-0 z-50 transition-all" data-purpose="site-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-1.5 shrink-0 group" href="#">
+<span class="font-extrabold tracking-wider text-white text-base sm:text-lg">JIKIRI BUTANAS</span>
+<span class="font-mono text-cyan-400 font-bold text-xs sm:text-sm tracking-widest">/DEV</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-medium text-slate-300">
+<a class="hover:text-cyan-400 transition-colors py-1" href="#about">About</a>
+<a class="hover:text-cyan-400 transition-colors py-1" href="#skills">Skills</a>
+<a class="hover:text-cyan-400 transition-colors py-1" href="#projects">Projects</a>
+<a class="hover:text-cyan-400 transition-colors py-1" href="#tools">Tools</a>
+<a class="hover:text-cyan-400 transition-colors py-1" href="#contact">Contact</a>
+</nav>
+<!-- Mobile Menu Toggle Button -->
+<button aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-[#16223b] focus:outline-none transition-colors" onclick="document.getElementById('mobileNav').classList.toggle('hidden')" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Mobile Navigation Dropdown Menu -->
+<div class="hidden md:hidden pb-4 pt-2 border-t border-[#1e2d4a]/60 space-y-1 text-sm font-medium text-slate-300" id="mobileNav">
+<div class="flex flex-wrap gap-2 pt-2">
+<a class="px-3 py-1.5 rounded-lg bg-[#141f36]/70 border border-[#233556] text-xs font-medium hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" href="#about" onclick="document.getElementById('mobileNav').classList.add('hidden')">About</a>
+<a class="px-3 py-1.5 rounded-lg bg-[#141f36]/70 border border-[#233556] text-xs font-medium hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" href="#skills" onclick="document.getElementById('mobileNav').classList.add('hidden')">Skills</a>
+<a class="px-3 py-1.5 rounded-lg bg-[#141f36]/70 border border-[#233556] text-xs font-medium hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" href="#projects" onclick="document.getElementById('mobileNav').classList.add('hidden')">Projects</a>
+<a class="px-3 py-1.5 rounded-lg bg-[#141f36]/70 border border-[#233556] text-xs font-medium hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" href="#tools" onclick="document.getElementById('mobileNav').classList.add('hidden')">Tools</a>
+<a class="px-3 py-1.5 rounded-lg bg-[#141f36]/70 border border-[#233556] text-xs font-medium hover:text-cyan-400 hover:border-cyan-400/40 transition-colors" href="#contact" onclick="document.getElementById('mobileNav').classList.add('hidden')">Contact</a>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16 sm:space-y-24">
+<!-- BEGIN: HeroSection -->
+<section class="w-full" data-purpose="hero-banner" id="about">
+<div class="w-full rounded-2xl sm:rounded-3xl bg-[#141f36]/80 border border-[#233556] p-6 sm:p-10 md:p-12 lg:p-16 shadow-2xl backdrop-blur-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
+<!-- Hero Text Column -->
+<div class="lg:col-span-8 space-y-5 sm:space-y-6 text-left">
+<!-- Pill Status Badge -->
+<div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-sky-500/30 bg-[#0d1627]/60 shadow-inner max-w-full">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+<span class="text-[10px] sm:text-xs font-mono tracking-widest text-sky-300 uppercase font-semibold truncate">
+  JUNIOR FULL-STACK DEVELOPER • OPEN TO WORK
+</span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight sm:leading-tight md:leading-tight tracking-tight">
+  Building responsive frontends and robust full-stack web applications.
+</h1>
+<!-- Subtitle Description -->
+<p class="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-light">
+  Full-stack developer with hands-on experience building custom web solutions—from relational database architecture and backend APIs to responsive, modern UI components.
+</p>
+<!-- Action Buttons -->
+<div class="pt-2 sm:pt-4 flex flex-wrap gap-3 sm:gap-4 items-center">
+<a class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-[#a5b4fc] text-[#0f172a] font-semibold hover:bg-[#c7d2fe] transition-all transform hover:-translate-y-0.5 shadow-lg shadow-indigo-500/20 text-xs sm:text-sm text-center shrink-0" href="#projects">
+  Explore Projects →
+</a>
+<a class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-slate-400 text-white font-medium transition-all text-xs sm:text-sm text-center shrink-0" href="#contact">
+  Contact / Schedule Call
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-slate-400 text-white font-medium transition-all text-xs sm:text-sm text-center shrink-0" href="./Jikiri CV-RESUME.pdf" download>
+<svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Download Resume</span>
+</a>
+</div>
+</div>
+<!-- Hero Profile Card Column -->
+<div class="lg:col-span-4 flex justify-center lg:justify-end w-full">
+<div class="w-full max-w-[280px] bg-[#0c1424] border border-[#233556] rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-xl group hover:border-[#385387] transition-all" data-purpose="user-profile-card">
+<div class="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-slate-700/80 p-1 shadow-md mb-5 sm:mb-6 bg-slate-800 shrink-0">
+<img alt="Jikiri Isaiah Butanas" class="w-full h-full object-cover rounded-full" src="./profile.jpg">
+</div>
+<h2 class="text-white text-base sm:text-lg font-bold tracking-wide text-center">
+  Jikiri Isaiah Butanas
+</h2>
+<div class="mt-5 sm:mt-6 flex items-center justify-center gap-3">
+<a aria-label="GitHub" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white hover:bg-slate-100 border border-white/90 flex items-center justify-center text-slate-900 hover:text-slate-800 transition-all shadow-md transform hover:-translate-y-0.5" href="#">
+<svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="LinkedIn" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white hover:bg-slate-100 border border-white/90 flex items-center justify-center text-blue-600 hover:text-blue-800 transition-all shadow-md transform hover:-translate-y-0.5" href="#">
+<svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37z"></path></svg>
+</a>
+<a aria-label="Facebook" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white hover:bg-slate-100 border border-white/90 flex items-center justify-center text-blue-600 hover:text-blue-800 transition-all shadow-md transform hover:-translate-y-0.5" href="#">
+<svg class="w-5 h-5 fill-currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="w-full space-y-8 sm:space-y-10" data-purpose="projects-showcase" id="projects">
+<!-- Section Header Badge -->
+<div class="flex justify-center">
+<div class="px-6 sm:px-8 py-2 rounded-md border border-[#233556] bg-[#111c30] text-xs sm:text-sm font-semibold tracking-wider text-slate-200 uppercase">
+    PROJECTS
+  </div>
+</div>
+<!-- Projects Grid Layout -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch"><!-- 1. E-Commerce API Documentation -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="E-Commerce API Documentation Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhHifLQ1N3frrS96V5Q1FcKsvLyhOb4kAsZSLyCg8f68lytRS-6EapZfJU3NhCLMIInAF37_tfPBAv-dRzpAlHbmCNvRzb_ZKpMXO9bG-b0Q0ZoNl5fdGl6VudFituNEz19N7jE4ehMYYusjGefS2axUqNFDzeeVIOlkCW7F3D3iqOseDT3tGPLHt6tryVjX0M0jG2EErSAueWL4bt0N8hze7iBJS7QlpSdytVO4JMVE5gO_c6foOGKfizLj-VD-CQN6E">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">E-Commerce API Documentation</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      A comprehensive, interactive RESTful API designed to power scalable e-commerce applications. It provides standardized endpoints for managing product catalogs, user authentication, shopping carts, order processing, and payment integrations with structured JSON responses and error handling.
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div>
+
+<!-- 2. Course Booking API Documentation -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="Course Booking API Documentation Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDcPldgBAmQrnRZK_3mDCusR_psu2mP950bhllIVxOk1cxJ7zugXiI6k4ogzlQXGWElaAOdxtIlAEExpifSbjuOJVS2ABwaIqYko7B1Uyiu_-TcGzl0aahsTtDQJ_RrUqnbp2LzBkKsbcNAac1WEdrJpC7eRrWpRsGz5uqjZWLi1VAAVxBtLP0ycvPDV15ylu2ukr83n82UFLqiOoZEbp5A3B0w0WChoRcP4_O8EMwCS9qCB7dRXdHLEev6TT0u35sVlI">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">Course Booking API Documentation</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      The Course Booking API allows developers to integrate course scheduling, searching, booking, and payment processing directly into their applications. This RESTful API is designed to manage the full lifecycle of a course, from initial setup to user enrollment.
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div>
+
+<!-- 3. Course Booking APP -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="Course Booking APP Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsvf6H-rnt0ytHfj2sMzo71a9JSk0B2mAO8nrllEEQoZ0XY7YLxOGmzVZfYu4zozrD--p3tutK3dzdKTjsoB4udWT3OTc98Fq90cYeYNmuVIO3MYXwMrQwMMoVLRuJh1EDfXx9heJnoAowdCJUetKksShGJWcY7VUYPH3z5GAYhUmTUaf6_rHiuZzi6gg73S35NkRCjWJlA_PB7TH0TiHfG0gXoh_6i9RJdv1_fIn8DpbjlRzwxQlu-UBm7p--Fx68xf8">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">Course Booking APP</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      A course booking app allows students, professionals, or hobbyists to discover, enroll in, and schedule educational classes. These platforms handle everything from self-paced online courses and live virtual bootcamps to in-person workshops (such as fitness classes, driving lessons, or cooking seminars).
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div>
+
+<!-- 4. E-commerce APP -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="E-commerce APP Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFtiJ7Mrm6bIg7odKoZDhSIiALMYRHsrCy5Ci1zZ7Mc5-HcAzTeccBYncEwsNGXWg1MIdZQSm2MzfFywA1pHCENA4l7eRWiFJFVuLHWVko8eXHFSoa_wNkKnFYKea0zdwm4wiw0QC4A1dgWBbHGSOiI8j8fUUgVpL1YZ9pau4cdwGd13Z3sDZkyC5yslc1ciIk9qeoBWCLQjJF5qFJ5HfGPokWrBSie0YzSWwxLaoy2T1tFkaMgf4HIXHFsS9ZHi0HqFo">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">E-commerce APP</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      An E-commerce app is a mobile or web software application designed to facilitate online buying and selling. It acts as a digital storefront where customers can browse product catalogs, view detailed specifications, select items, and complete secure purchases using integrated payment systems.
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div>
+
+<!-- 5. Airline Booking System Mockup -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="Airline Booking System Mockup Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHOBMqJse0AjmFZMlFt3zElZg6NEVQfz8IG6UZ7aQ0nr7I0j4bnsFp_mL3O5ie9l9cZPNsQJ3g29xsWvQeKexiLLv9dspTGHIHSiDsAJVIruunOwntr06VHHRdXJXuyZuoDhd3Nza5TTnPSKNLPA3YK_iLsg6r1YHWg55aAOW_Mkj98OYXquP2vipBrMpQCy1iNKoq5g5sv4Rl30IAbcEcVb7INL_-ULJuVfc747DIdVLpRo8KsMZp-TY0iUz36DhnuuA">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">Airline Booking System Mockup</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      An airline booking system mockup design is a visual blueprint or UI/UX prototype that illustrates how users interact with a flight reservation platform. It maps out the visual hierarchy, user interface elements, and layout components across desktop or mobile screens before any actual coding takes place.
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div>
+
+<!-- 6. Airline Booking System Prototype -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="Airline Booking System Prototype Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPgVqtipTvTwDVt1iIxzQfTyqcMvzZGP27_iYdUHFosppYVwGYyCLIn_7lTRsG4EXa0fCUA61Jp67Hywlhuc2VGQD0eUMYWjwJn2nL_ZpPwksWVe6xDwfT6mrBhBQBVwIZYeryvkddLP2pY_ggwHiPgd9W3A7NtFFHHc0JAe3CNjSoZ8NDKV6T8tUx-gwDvTexPv1HV6qtVQwBvvo1gu0mnKXo3GP-9izPwubx9C2d_y-HoOz7roIXfB0CpSxPKD1WcmQ">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">Airline Booking System Prototype</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      An airline booking system prototype design is an interactive, high-fidelity visual model of a flight reservation platform. It bridges the gap between static mockups and a functional web or mobile app, allowing stakeholders and portfolio reviewers to experience the actual user journey, click through navigation paths, and evaluate the usability of the interface.
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div>
+
+<!-- 7. Short Course Capstone (Centered on 3-col layouts) -->
+<div class="flex flex-col justify-between rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-6 transition-all duration-300 hover:shadow-xl backdrop-blur-md sm:col-span-2 lg:col-span-1 lg:col-start-2 sm:max-w-md sm:mx-auto lg:max-w-full w-full">
+  <div class="space-y-4">
+    <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-[#1e2f4f] bg-[#0b1424]">
+      <img alt="Short Course Capstone Preview" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVSk3mZ5ukccJ3s61DSyqwVHnJ3ovYnkIcBrTTYs3gZ8Ln6MyzWx2f6nPTBz2e_OtF7DM-lcjhl4NquPDRFpq5k1bo5feBkLfMSIlU5plA5qAf09b0m5Bw5QIjVF05SVspDCNmhDFtT5TB_-1_lRIubmjSe2cHkQhWUE9bPCtiQG1yh_eW1B8yAM5wleCr2x5GRHBWf-EyOzT2oBjXDRBAywwvcj2-dqWiMwToEERtPzMHvH8yUxEX2h1qHiMH5LXAh2s">
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide text-center pt-1">Short Course Capstone</h3>
+    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed text-center font-light">
+      A short course capstone project is a culminating academic or professional assignment designed to let learners apply the comprehensive skills, tools, and concepts they have learned throughout a focused, intensive program. Unlike standard homework or quizzes, a capstone mirrors real-world challenges, requiring students to plan, execute, and present a complete project from scratch.
+    </p>
+  </div>
+  <div class="pt-6 mt-4 border-t border-[#1e2f4f]/50 flex justify-center">
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full text-center py-2.5 px-4 rounded-xl border border-[#2d426a] bg-[#111c30]/50 hover:bg-[#1a2b4a] hover:border-indigo-400/50 text-slate-200 hover:text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer shadow-sm">
+      VIEW REPOSITORY ↗
+    </a>
+  </div>
+</div></div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: SkillsSection -->
+<section class="w-full space-y-8 sm:space-y-10" data-purpose="skills-showcase" id="skills">
+<div class="flex justify-center">
+<div class="px-6 sm:px-8 py-2 rounded-md border border-[#233556] bg-[#111c30] text-xs sm:text-sm font-semibold tracking-wider text-slate-200 uppercase">
+    SKILLS
+  </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+<!-- Frontend Core -->
+<div class="rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-400/50 p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+<div class="space-y-5 sm:space-y-6">
+<div class="flex items-center justify-between pb-4 sm:pb-5 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-base font-bold text-white tracking-wide">Frontend Core</h3>
+</div>
+<span class="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 shrink-0">Core UI</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">HTML / HTML5</span>
+<span class="font-mono text-cyan-400 text-[11px]">Proficient</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-indigo-400 h-2 rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">CSS / CSS3</span>
+<span class="font-mono text-cyan-400 text-[11px]">Competent</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-indigo-400 h-2 rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">JavaScript (ES6+)</span>
+<span class="font-mono text-cyan-400 text-[11px]">Intermediate</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-indigo-400 h-2 rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 sm:pt-5 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Semantic &amp; Modern Web</span>
+<span class="text-indigo-400">client-side</span>
+</div>
+</div>
+<!-- Backend & Database -->
+<div class="rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-emerald-500/40 p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl backdrop-blur-md">
+<div class="space-y-5 sm:space-y-6">
+<div class="flex items-center justify-between pb-4 sm:pb-5 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="text-base font-bold text-white tracking-wide">Backend &amp; Database</h3>
+</div>
+<span class="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 shrink-0">Data &amp; Logic</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">PHP</span>
+<span class="font-mono text-emerald-300 text-[11px]">Familiar</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-emerald-400 h-2 rounded-full" style="width: 55%;"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">MySQL</span>
+<span class="font-mono text-emerald-300 text-[11px]">Intermediate</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-emerald-400 h-2 rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">REST APIs</span>
+<span class="font-mono text-emerald-300 text-[11px]">Foundational</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-emerald-400 h-2 rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 sm:pt-5 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Relational DB &amp; Server</span>
+<span class="text-emerald-400">server-side</span>
+</div>
+</div>
+<!-- Workflow & Design -->
+<div class="rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-sky-500/40 p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl backdrop-blur-md md:col-span-2 lg:col-span-1">
+<div class="space-y-5 sm:space-y-6">
+<div class="flex items-center justify-between pb-4 sm:pb-5 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="text-base font-bold text-white tracking-wide">Workflow &amp; Design</h3>
+</div>
+<span class="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20 shrink-0">Practices</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">Git &amp; GitHub</span>
+<span class="font-mono text-sky-300 text-[11px]">Intermediate</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-sky-400 h-2 rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">Responsive Web Design</span>
+<span class="font-mono text-sky-300 text-[11px]">Proficient</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-sky-400 h-2 rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-medium text-slate-200">API Integration &amp; Testing</span>
+<span class="font-mono text-sky-300 text-[11px]">Familiar</span>
+</div>
+<div class="w-full bg-[#0b1424] rounded-full h-2 border border-[#1e2f4f]">
+<div class="bg-sky-400 h-2 rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 sm:pt-5 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Version Control &amp; Mobile-First</span>
+<span class="text-sky-400">dev-ops</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsSection -->
+<!-- BEGIN: ToolsSection -->
+<section class="w-full space-y-8 sm:space-y-10" data-purpose="tools-and-tech" id="tools">
+<!-- Section Header Badge -->
+<div class="flex justify-center">
+<div class="px-6 sm:px-8 py-2 rounded-md border border-[#233556] bg-[#111c30] text-xs sm:text-sm font-semibold tracking-wider text-slate-200 uppercase">
+    TOOLS
+  </div>
+</div>
+<!-- Tools Categories Containers -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+<!-- Category 1: Front-End Tools -->
+<div class="relative group rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-cyan-500/40 p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/5 backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between pb-4 sm:pb-5 mb-5 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="text-base font-bold text-white tracking-wide">Front-End Tools</h3>
+</div>
+<span class="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20 shrink-0">5 Techs</span>
+</div>
+<!-- Wrap badges gracefully -->
+<div class="flex flex-wrap gap-2.5 sm:gap-3">
+<!-- HTML5 -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-orange-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#e34f26]/15 flex items-center justify-center text-[#e34f26] shrink-0 font-black text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059-.001.236-2.664H4.742l.698 8.046h8.48l-.299 3.486-3.644.996-3.639-.997-.19-2.146H3.882l.379 4.417 7.716 2.144 7.728-2.144.975-11.121H8.531z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">HTML5</span>
+</div>
+<!-- CSS3 -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-blue-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#1572b6]/15 flex items-center justify-center text-[#1572b6] shrink-0 font-black text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.368H5.41l.235 2.665h10.978l-.298 3.393H5.879l.235 2.664h7.94l-.32 3.593-3.757 1.015-3.75-1.015-.224-2.476H3.69l.394 4.747 7.893 2.189 7.896-2.189 1.017-11.644h-.3z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">CSS3</span>
+</div>
+<!-- Bootstrap -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-purple-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#7952b3]/20 flex items-center justify-center text-[#9069cd] shrink-0 font-black text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.65 4.3A4.54 4.54 0 0 0 14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21H14.5a4.8 4.8 0 0 0 3.75-1.7 5.16 5.16 0 0 0 .95-3.2 4.45 4.45 0 0 0-1.85-3.6A4.14 4.14 0 0 0 19 8.9a4.88 4.88 0 0 0-1.35-4.6zM9.5 6.5h4.2a2.1 2.1 0 0 1 2.1 2.1 2.1 2.1 0 0 1-2.1 2.1H9.5zm4.9 11H9.5v-4.5h4.9a2.25 2.25 0 0 1 2.25 2.25 2.25 2.25 0 0 1-2.25 2.25z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Bootstrap</span>
+</div>
+<!-- JavaScript -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-yellow-400/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#f7df1e]/15 flex items-center justify-center text-[#f7df1e] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.621-1.554-1.288 0-.438.368-.714 1.057-.714.736 0 1.287.276 1.701.897l1.793-1.127c-.644-.966-1.586-1.471-2.943-1.471-1.954 0-3.379 1.15-3.379 2.874 0 1.586 1.012 2.391 2.736 3.058.85.345 1.586.644 1.586 1.402 0 .575-.529.897-1.333.897-.966 0-1.632-.46-2.115-1.288l-1.84 1.081c.713 1.287 1.954 1.885 3.518 1.885 2.414 0 3.793-1.241 3.837-3.316zm-7.794-.368h-2.3v-7.29h2.3v7.29zm.069 3.587v-2.161h-2.438V21.5h2.438z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">JavaScript</span>
+</div>
+<!-- Vue.js -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-emerald-400/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#42b883]/15 flex items-center justify-center text-[#42b883] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.773 1.5L12 6.3 9.227 1.5H0l12 21L24 1.5h-9.227zM4.364 3.75h3.636L12 10.65l4-6.9h3.636L12 17.5 4.364 3.75z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Vue.js</span>
+</div>
+</div>
+</div>
+<div class="pt-4 sm:pt-5 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">UI Components &amp; Styling</span>
+<span class="text-sky-400">client-side</span>
+</div>
+</div>
+<!-- Category 2: MERN Stack -->
+<div class="relative group rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-emerald-500/40 p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/5 backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between pb-4 sm:pb-5 mb-5 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="text-base font-bold text-white tracking-wide">MERN Stack</h3>
+</div>
+<span class="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 shrink-0">Full-Stack</span>
+</div>
+<div class="flex flex-wrap gap-2.5 sm:gap-3">
+<!-- MongoDB -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-emerald-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#47a248]/15 flex items-center justify-center text-[#47a248] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.012 0c-.394.025-4.227 4.195-4.227 9.873 0 5.485 3.666 9.38 4.227 9.946.56-.566 4.227-4.461 4.227-9.946 0-5.678-3.833-9.848-4.227-9.873zm-.124 15.114l-.008-9.05c.01-.01 1.709 1.782 1.709 4.908 0 2.304-.98 3.737-1.701 4.142zm.124 6.745c-.244-.247-1.127-1.229-1.849-2.735l1.849 1.139 1.849-1.139c-.722 1.506-1.605 2.488-1.849 2.735z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">MongoDB</span>
+</div>
+<!-- Express.js -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-slate-300/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center text-slate-200 shrink-0 font-mono font-bold text-xs">
+<span class="">ex</span>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Express.js</span>
+</div>
+<!-- React -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-cyan-400/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#61dafb]/15 flex items-center justify-center text-[#61dafb] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4 animate-[spin_10s_linear_infinite]" fill="currentColor" viewBox="0 0 115.3 100"><circle cx="57.6" cy="50" r="8.4"></circle><g fill="none" stroke="currentColor" stroke-width="4.5"><ellipse cx="57.6" cy="50" rx="48" ry="18"></ellipse><ellipse cx="57.6" cy="50" rx="48" ry="18" transform="rotate(60 57.6 50)"></ellipse><ellipse cx="57.6" cy="50" rx="48" ry="18" transform="rotate(120 57.6 50)"></ellipse></g></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">React</span>
+</div>
+<!-- Node.js -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-green-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#5fa04e]/15 flex items-center justify-center text-[#5fa04e] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L3 7.2v10.4L12 22l9-4.8V7.2L12 2zm-1 15.6l-5-2.7V9.7l5 2.7v5.2zm2 0v-5.2l5-2.7v5.2l-5 2.7zM12 4.4l5 2.7-5 2.7-5-2.7 5-2.7z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Node.js</span>
+</div>
+<!-- Postman -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-orange-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#ff6c37]/15 flex items-center justify-center text-[#ff6c37] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 1.5C7.15 1.5 2 6.65 2 13s5.15 11.5 11.5 11.5S25 19.35 25 13 19.85 1.5 13.5 1.5zm6.8 7.4l-1.3 3.6-2.1-.8 1.3-3.6 2.1.8zm-4.7 1.8l-1.3 3.6-2.1-.8 1.3-3.6 2.1.8zm-9.3 4.2c.4-.7 1.3-1 2-0.6l5.7 3.3-1.1 1.9-5.7-3.3c-.7-.4-1.3-.8-.9-1.3z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Postman</span>
+</div>
+</div>
+</div>
+<div class="pt-4 sm:pt-5 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Backend APIs &amp; Databases</span>
+<span class="text-emerald-400">server-side</span>
+</div>
+</div>
+<!-- Category 3: Other Tools -->
+<div class="relative group rounded-2xl bg-gradient-to-b from-[#141f36]/90 via-[#10192e]/80 to-[#0c1424] border border-[#233556] hover:border-indigo-500/40 p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5 backdrop-blur-md">
+<div>
+<div class="flex items-center justify-between pb-4 sm:pb-5 mb-5 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="text-base font-bold text-white tracking-wide">Other Tools</h3>
+</div>
+<span class="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 shrink-0">7 Utilities</span>
+</div>
+<div class="flex flex-wrap gap-2.5 sm:gap-3">
+<!-- VS Code -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-blue-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#007acc]/15 flex items-center justify-center text-[#007acc] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .32 8.707L4.898 12 .32 15.293a1 1 0 0 0 .007 1.446l1.322 1.202c.369.335.91.36 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.94-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">VS Code</span>
+</div>
+<!-- Sublime Text -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-amber-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#ff9800]/15 flex items-center justify-center text-[#ff9800] shrink-0 font-black text-xs font-serif">
+<span class="">S</span>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Sublime</span>
+</div>
+<!-- Trello -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-blue-600/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#0052cc]/15 flex items-center justify-center text-[#2684ff] shrink-0 font-bold text-xs gap-0.5">
+<div class="w-1.5 h-3 bg-[#0052cc] rounded-xs"></div>
+<div class="w-1.5 h-2 bg-[#0052cc] rounded-xs"></div>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Trello</span>
+</div>
+<!-- Git / GitHub -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-red-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#f05032]/15 flex items-center justify-center text-[#f05032] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.62 10.45l-8.07-8.07a2.76 2.76 0 0 0-3.9 0L7.54 4.5l3.28 3.28a2.38 2.38 0 0 1 2.34.6 2.39 2.39 0 0 1 .6 2.35l3.16 3.16a2.39 2.39 0 0 1 2.35.6 2.4 2.4 0 0 1-3.4 3.4 2.4 2.4 0 0 1-.58-2.43l-2.98-2.98v5.52a2.4 2.4 0 1 1-1.68-.06v-5.6l-2.52-2.52-4.8 4.8a2.76 2.76 0 0 0 0 3.9l8.07 8.07a2.76 2.76 0 0 0 3.9 0l8.07-8.07a2.76 2.76 0 0 0 0-3.9z"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Git</span>
+</div>
+<!-- XAMPP -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-orange-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#fb7a24]/15 flex items-center justify-center text-[#fb7a24] shrink-0 font-black text-[9px]">
+<span class="">XAMPP</span>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">XAMPP</span>
+</div>
+<!-- REST / DevTools -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-violet-500/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#8b5cf6]/15 flex items-center justify-center text-[#8b5cf6] shrink-0 font-mono font-bold text-xs">
+<span class="">&lt;/&gt;</span>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">DevTools</span>
+</div>
+<!-- Web / Hosting -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0b1424]/80 border border-[#1e2f4f] hover:border-cyan-400/50 hover:bg-[#121e35] transition-all group/item hover:-translate-y-0.5 grow sm:grow-0">
+<div class="w-6 h-6 rounded-md bg-[#06b6d4]/15 flex items-center justify-center text-[#06b6d4] shrink-0 font-bold text-xs">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.8"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-width="1.8"></path></svg>
+</div>
+<span class="text-xs font-medium text-slate-200 group-hover/item:text-white">Web</span>
+</div>
+</div>
+</div>
+<div class="pt-4 sm:pt-5 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Version Control &amp; Workflow</span>
+<span class="text-indigo-400">dev-ops</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ToolsSection -->
+<!-- BEGIN: ContactSection -->
+<section class="w-full space-y-8 sm:space-y-10" data-purpose="contact-container" id="contact">
+<!-- Section Header -->
+<div class="flex flex-col items-center justify-center text-center space-y-3 px-2">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#233556] bg-[#111c30] shadow-inner">
+<span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse shrink-0"></span>
+<span class="text-xs font-mono tracking-widest text-[#93c5fd] uppercase font-semibold">CONTACT</span>
+</div>
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Get In Touch</h2>
+<p class="text-slate-400 text-xs sm:text-sm md:text-base max-w-lg font-light">Have a project in mind or want to collaborate? Feel free to reach out.</p>
+</div>
+<!-- Contact 2-Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+<!-- Left: Map Container Card -->
+<div class="bg-[#111c30]/90 border border-[#233556] rounded-2xl p-5 sm:p-6 shadow-xl flex flex-col justify-between backdrop-blur-md hover:border-indigo-400/50 transition-all duration-300">
+<div class="space-y-4">
+<div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-sm shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-base font-bold text-white tracking-wide">Location &amp; Office</h3>
+<p class="text-xs text-slate-400 font-mono">Tandag City, Surigao del Sur</p>
+</div>
+</div>
+<span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center gap-1.5 shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Active Hub
+        </span>
+</div>
+<!-- Place Details Badge -->
+<div class="p-3.5 rounded-xl bg-[#0c1424]/80 border border-[#1e2f4f] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+<div>
+<h4 class="text-xs font-bold text-white tracking-wide">River View Food House</h4>
+<p class="text-[11px] text-slate-400">35FM+RQR Purok Nangka, Bioto, City of Tandag, Surigao del Sur</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#141f36] border border-[#233556] shrink-0 text-xs self-start sm:self-auto">
+<span class="font-bold text-white">4.9</span>
+<span class="text-amber-500">★</span>
+<span class="text-slate-400 text-[11px]">(20 reviews)</span>
+</div>
+</div>
+<!-- Responsive Map Container -->
+<div class="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-xl overflow-hidden border border-[#233556] shadow-inner bg-[#cbe3e9]">
+<!-- Map Floating Info Card -->
+<div class="absolute top-3 left-3 z-10 bg-[#0c1424]/95 text-white p-2.5 sm:p-3 rounded-lg shadow-xl border border-[#233556] max-w-[190px] sm:max-w-[220px] text-xs space-y-1 backdrop-blur-sm">
+<div class="flex justify-between items-start">
+<span class="font-bold text-white text-[10px] sm:text-[11px] leading-tight">RIVER VIEW FOOD HOUSE</span>
+<a class="text-cyan-400 hover:text-white transition-colors ml-1 text-xs font-bold" href="#">↗</a>
+</div>
+<p class="text-[9px] sm:text-[10px] text-slate-400 leading-tight">Tandag City, Philippines</p>
+<div class="flex items-center gap-1 pt-0.5 text-[9px] sm:text-[10px]">
+<span class="font-semibold text-emerald-400">Open</span>
+<span class="text-slate-400">• 4.9 ★</span>
+</div>
+</div>
+<!-- Map Pin Graphic -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none text-center">
+<div class="text-red-500 text-2xl sm:text-3xl animate-bounce">📍</div>
+<span class="bg-[#0c1424]/90 border border-red-500/40 text-white font-bold text-[8px] sm:text-[9px] px-2 py-0.5 rounded-full shadow-lg whitespace-nowrap">RIVER VIEW FOOD HOUSE</span>
+</div>
+<!-- Map Graphical Texture -->
+<svg class="w-full h-full opacity-60" preserveAspectRatio="none" viewBox="0 0 500 400">
+<path d="M0,100 Q150,200 250,150 T500,200 L500,400 L0,400 Z" fill="#b9d7a8"></path>
+<path d="M0,280 Q200,320 320,250 T500,300" fill="none" stroke="#7eb7c6" stroke-width="26"></path>
+<path d="M120,0 Q180,220 220,400" fill="none" stroke="#f0ddb4" stroke-width="14"></path>
+<path d="M0,150 L500,350" fill="none" stroke="#ffffff" stroke-dasharray="8 4" stroke-width="4"></path>
+</svg>
+<!-- Map Attribution -->
+<div class="absolute bottom-2 right-2 z-10 bg-[#0c1424]/85 text-[8px] sm:text-[9px] text-slate-400 px-2 py-0.5 rounded border border-[#233556]">
+          Google Map data ©2026
+        </div>
+</div>
+</div>
+<div class="pt-4 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Surigao del Sur, PH</span>
+<span class="text-indigo-400">GMT+8</span>
+</div>
+</div>
+<!-- Right: Form Container Card -->
+<div class="bg-[#111c30]/90 border border-[#233556] rounded-2xl p-5 sm:p-7 lg:p-8 shadow-xl flex flex-col justify-between backdrop-blur-md hover:border-indigo-400/50 transition-all duration-300">
+<div>
+<!-- Form Header -->
+<div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 sm:mb-6 border-b border-[#1e2f4f]/70">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-sm shrink-0">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-base font-bold text-white tracking-wide">Send a Message</h3>
+<p class="text-xs text-slate-400">Typically responds within 24 hours</p>
+</div>
+</div>
+<span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 shrink-0">
+          Direct Inbox
+        </span>
+</div>
+<!-- Form Fields -->
+<form action="#" class="space-y-4" method="POST" onsubmit="event.preventDefault();">
+<div>
+<label class="block text-xs font-medium uppercase tracking-wider text-slate-400 mb-2" for="name">Your Name</label>
+<input class="w-full px-4 py-3 rounded-xl bg-[#0e1728] border border-[#233556] text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:border-indigo-400 text-sm transition-all" id="name" name="name" placeholder="e.g. John Doe" required="" type="text">
+</div>
+<div>
+<label class="block text-xs font-medium uppercase tracking-wider text-slate-400 mb-2" for="email">Email Address</label>
+<input class="w-full px-4 py-3 rounded-xl bg-[#0e1728] border border-[#233556] text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:border-indigo-400 text-sm transition-all" id="email" name="email" placeholder="e.g. john@example.com" required="" type="email">
+</div>
+<div>
+<label class="block text-xs font-medium uppercase tracking-wider text-slate-400 mb-2" for="message">Your Message</label>
+<textarea class="w-full px-4 py-3 rounded-xl bg-[#0e1728] border border-[#233556] text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:border-indigo-400 text-sm resize-none transition-all" id="message" name="message" placeholder="Write your message or project requirements here..." required="" rows="4"></textarea>
+</div>
+<div class="pt-2">
+<button class="w-full py-3.5 px-6 rounded-xl bg-[#a5b4fc] text-[#0f172a] font-bold tracking-wider hover:bg-[#c7d2fe] transition-all transform hover:-translate-y-0.5 shadow-lg shadow-indigo-500/20 text-sm flex items-center justify-center gap-2 cursor-pointer uppercase" type="submit">
+<span class="">Send Message</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<div class="pt-4 mt-4 text-[11px] font-mono text-slate-400 flex items-center justify-between border-t border-[#1e2f4f]/50">
+<span class="">Protected by reCAPTCHA</span>
+<span class="text-indigo-400">Encrypted</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+</main>
+<!-- BEGIN: SiteFooter -->
+<footer class="w-full border-t border-[#1e2d4a] bg-[#0c1220] py-8 sm:py-10 mt-16 sm:mt-24" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center space-y-6">
+<!-- Social Media & Contact Links -->
+<div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+<a aria-label="GitHub Profile" class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-[#111c30] border border-[#233556] text-slate-300 hover:text-white hover:border-indigo-400/50 hover:bg-[#1a2b4a] transition-all text-xs font-medium shadow-sm transform hover:-translate-y-0.5" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 fill-currentColor shrink-0" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+<span class="">GitHub</span>
+</a>
+<a aria-label="LinkedIn Profile" class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-[#111c30] border border-[#233556] text-slate-300 hover:text-white hover:border-indigo-400/50 hover:bg-[#1a2b4a] transition-all text-xs font-medium shadow-sm transform hover:-translate-y-0.5" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 text-blue-600 fill-currentColor shrink-0" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37z"></path></svg>
+<span class="">LinkedIn</span>
+</a>
+<a aria-label="Facebook Profile" class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-[#111c30] border border-[#233556] text-slate-300 hover:text-white hover:border-indigo-400/50 hover:bg-[#1a2b4a] transition-all text-xs font-medium shadow-sm transform hover:-translate-y-0.5" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 text-blue-600 fill-currentColor shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+<span class="">Facebook</span>
+</a>
+<a aria-label="Email via Gmail" class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-[#111c30] border border-[#233556] text-slate-300 hover:text-white hover:border-indigo-400/50 hover:bg-[#1a2b4a] transition-all text-xs font-medium shadow-sm transform hover:-translate-y-0.5" href="mailto:jikiri.butanas@example.com">
+<svg class="w-4 h-4 text-red-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Gmail</span>
+</a>
+</div>
+<div class="w-full max-w-xs border-t border-[#1e2f4f]/70"></div>
+<p class="text-xs sm:text-sm text-slate-400 font-light tracking-wide text-center px-4 leading-relaxed">
+    © 2026 JIKIRI BUTANAS. All Rights Reserved. Built with Figma, Stitch, CSS and Bootstrap.
+  </p>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+
+
+</body></html>
